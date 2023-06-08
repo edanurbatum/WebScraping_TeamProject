@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Homes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="price" Type="int" />
+          <Property Name="city" Type="nvarchar(max)" />
+          <Property Name="county" Type="nvarchar(max)" />
+          <Property Name="age" Type="int" />
+          <Property Name="floor" Type="int" />
+          <Property Name="room" Type="nvarchar(max)" />
+          <Property Name="metre" Type="int" />
+          <Property Name="district" Type="nvarchar(max)" />
+          <Property Name="totalFloor" Type="int" />
+          <Property Name="heating" Type="nvarchar(max)" />
+          <Property Name="isFurnished" Type="nvarchar(max)" />
+          <Property Name="formHousing" Type="nvarchar(max)" />
+          <Property Name="bathroom" Type="int" />
+          <Property Name="link" Type="nvarchar(max)" />
+          <Property Name="image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="HomesSahibinden">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="price" Type="int" />
+          <Property Name="city" Type="nvarchar(max)" />
+          <Property Name="county" Type="nvarchar(max)" />
+          <Property Name="age" Type="int" />
+          <Property Name="floor" Type="int" />
+          <Property Name="room" Type="nvarchar(max)" />
+          <Property Name="metre" Type="int" />
+          <Property Name="district" Type="nvarchar(max)" />
+          <Property Name="totalFloor" Type="int" />
+          <Property Name="heating" Type="nvarchar(max)" />
+          <Property Name="isFurnished" Type="nvarchar(max)" />
+          <Property Name="formHousing" Type="nvarchar(max)" />
+          <Property Name="bathroom" Type="int" />
+          <Property Name="link" Type="nvarchar(max)" />
+          <Property Name="image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="il">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="il" Type="nvarchar" MaxLength="100" />
+          <Property Name="ilId" Type="int" />
+        </EntityType>
+        <EntityType Name="ilce">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ilce" Type="nvarchar" MaxLength="100" />
+          <Property Name="ilceId" Type="int" />
+          <Property Name="ilId" Type="int" />
+        </EntityType>
+        <EntityType Name="mahalle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mahalle" Type="nvarchar" MaxLength="100" />
+          <Property Name="mahalleId" Type="int" />
+          <Property Name="ilceId" Type="int" />
+          <Property Name="ilId" Type="int" />
+        </EntityType>
+        <EntityContainer Name="StoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Homes" EntityType="Self.Homes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HomesSahibinden" EntityType="Self.HomesSahibinden" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="il" EntityType="Self.il" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ilce" EntityType="Self.ilce" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mahalle" EntityType="Self.mahalle" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WebScrapingDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WebScrapingDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="WebScrapingDBModel.C__MigrationHistory" />
+          <EntitySet Name="Homes" EntityType="WebScrapingDBModel.Homes" />
+          <EntitySet Name="HomesSahibinden" EntityType="WebScrapingDBModel.HomesSahibinden" />
+          <EntitySet Name="il" EntityType="WebScrapingDBModel.il" />
+          <EntitySet Name="ilce" EntityType="WebScrapingDBModel.ilce" />
+          <EntitySet Name="mahalle" EntityType="WebScrapingDBModel.mahalle" />
+        </EntityContainer>
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Homes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="county" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="floor" Type="Int32" />
+          <Property Name="room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="metre" Type="Int32" />
+          <Property Name="district" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="totalFloor" Type="Int32" />
+          <Property Name="heating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isFurnished" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="formHousing" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bathroom" Type="Int32" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HomesSahibinden">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="price" Type="Int32" />
+          <Property Name="city" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="county" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="floor" Type="Int32" />
+          <Property Name="room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="metre" Type="Int32" />
+          <Property Name="district" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="totalFloor" Type="Int32" />
+          <Property Name="heating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isFurnished" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="formHousing" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bathroom" Type="Int32" />
+          <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="il">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="il1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ilId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ilce">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ilce1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ilceId" Type="Int32" />
+          <Property Name="ilId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="mahalle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mahalle1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mahalleId" Type="Int32" />
+          <Property Name="ilceId" Type="Int32" />
+          <Property Name="ilId" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoreContainer" CdmEntityContainer="WebScrapingDBEntities" >
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="WebScrapingDBModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Homes">
+            <EntityTypeMapping TypeName="WebScrapingDBModel.Homes">
+              <MappingFragment StoreEntitySet="Homes">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="bathroom" ColumnName="bathroom" />
+                <ScalarProperty Name="formHousing" ColumnName="formHousing" />
+                <ScalarProperty Name="isFurnished" ColumnName="isFurnished" />
+                <ScalarProperty Name="heating" ColumnName="heating" />
+                <ScalarProperty Name="totalFloor" ColumnName="totalFloor" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="metre" ColumnName="metre" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HomesSahibinden">
+            <EntityTypeMapping TypeName="WebScrapingDBModel.HomesSahibinden">
+              <MappingFragment StoreEntitySet="HomesSahibinden">
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="bathroom" ColumnName="bathroom" />
+                <ScalarProperty Name="formHousing" ColumnName="formHousing" />
+                <ScalarProperty Name="isFurnished" ColumnName="isFurnished" />
+                <ScalarProperty Name="heating" ColumnName="heating" />
+                <ScalarProperty Name="totalFloor" ColumnName="totalFloor" />
+                <ScalarProperty Name="district" ColumnName="district" />
+                <ScalarProperty Name="metre" ColumnName="metre" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="il">
+            <EntityTypeMapping TypeName="WebScrapingDBModel.il">
+              <MappingFragment StoreEntitySet="il">
+                <ScalarProperty Name="ilId" ColumnName="ilId" />
+                <ScalarProperty Name="il1" ColumnName="il" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ilce">
+            <EntityTypeMapping TypeName="WebScrapingDBModel.ilce">
+              <MappingFragment StoreEntitySet="ilce">
+                <ScalarProperty Name="ilId" ColumnName="ilId" />
+                <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+                <ScalarProperty Name="ilce1" ColumnName="ilce" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mahalle">
+            <EntityTypeMapping TypeName="WebScrapingDBModel.mahalle">
+              <MappingFragment StoreEntitySet="mahalle">
+                <ScalarProperty Name="ilId" ColumnName="ilId" />
+                <ScalarProperty Name="ilceId" ColumnName="ilceId" />
+                <ScalarProperty Name="mahalleId" ColumnName="mahalleId" />
+                <ScalarProperty Name="mahalle1" ColumnName="mahalle" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

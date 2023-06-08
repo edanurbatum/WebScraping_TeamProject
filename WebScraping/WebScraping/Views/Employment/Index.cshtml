@@ -1,0 +1,87 @@
+﻿@model List<WebScraping.Models.Siniflar.WebScrapingDBEntities>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <h3><center>Kiralık Ev İlanları ve Özellikleri</center></h3>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>
+                            Ev Resimleri
+                        </th>
+                        <th>
+                            Ev Fiyatı
+                        </th>
+                        <th>
+                            İl
+                        </th>
+                        <th>
+                            İlçe
+                        </th>
+                        <th>
+                            Bina yaşı
+                        </th>
+                        <th>
+                            Bulunduğu Kat
+                        </th>
+                        <th>
+                            Oda Sayısı
+                        </th>
+                        <th>
+                            Metre<sup>2</sup>
+                        </th>
+                        <th>
+                            Link
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            <img src="@item.image" style="width:70px; height:70px;" />
+                        </td>
+                        <td>
+                            @item.price
+                        </td>
+                        <td>
+                            @item.city
+                        </td>
+                        <td>
+                            @item.county
+                        </td>
+                        <td>
+                            @item.age
+                        </td>
+                        <td>
+                            @item.floor
+                        </td>
+                        <td>
+                            @item.room
+                        </td>
+                        <td>
+                            @item.metre
+                        </td>
+                        <td>
+                            <a href="@item.link">Detaylar</a>
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>

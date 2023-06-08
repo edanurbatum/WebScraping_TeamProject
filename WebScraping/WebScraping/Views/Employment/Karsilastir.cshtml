@@ -1,0 +1,371 @@
+﻿
+@{
+    var Homes = ViewBag.Homes;
+    var HomesSahibinden = ViewBag.HomesSahibinden;
+
+    var il = ViewBag.il;
+
+}
+@{
+    ViewBag.Title = "Karsilastir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<div class="col-md-12" style="position: relative;">
+
+    <div class="col-lg-4 col-xl-4" style="background-color: #00c14d; margin-top: 15px; border-radius: 10px; width: 315px;">
+        <div class="card">
+            <div class="card-header" style="margin-top: 10px; margin-bottom: -15px; text-align: center;">
+                <h5><i class="icofont icofont-filter m-r-5"></i>Filtre</h5>
+            </div>
+            <div class="card-block">
+                <form action="#">
+                    @*il*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="ilsecim">
+                                <option value="0">İl Seçin</option>
+                                @foreach (var item in il)
+                                {
+                                    <option value="@item.ilId">@item.il1</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    @*ilçe*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="ilcesecim">
+                            </select>
+                        </div>
+                    </div>
+
+                    @*mahalle*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="mahallesecim">
+                            </select>
+                        </div>
+                    </div>
+
+                    @*fiyat*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input type="number" id="minfiyat" class="form-control" placeholder="Min. Fiyat">
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="number" id="maxfiyat" class="form-control" placeholder="Max. Fiyat">
+                        </div>
+                    </div>
+
+                    @*m2*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <input type="number" id="minmk" class="form-control" placeholder="Min. m2">
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="number" id="maxmk" class="form-control" placeholder="Max. m2">
+                        </div>
+                    </div>
+
+                    @*oda sayısı*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="odasecim">
+                                <option value="0">Tümü</option>
+                                <option value="Stüdyo">Stüdyo</option>
+                                <option value="1 Oda">1 Oda</option>
+                                <option value="1+1">1 + 1</option>
+                                <option value="2+1">2 + 1</option>
+                                <option value="2+2">2 + 2</option>
+                                <option value="3+1">3 + 1</option>
+                                <option value="3+2">3 + 2</option>
+                                <option value="4+1">4 + 1</option>
+                                <option value="4+2">4 + 2</option>
+                                <option value="4+3">4 + 3</option>
+                                <option value="4+4">4 + 4</option>
+                                <option value="5+1">5 + 1</option>
+                                <option value="5+2">5 + 2</option>
+                                <option value="5+3">5 + 3</option>
+                                <option value="5+4">5 + 4</option>
+                                <option value="6+1">6 + 1</option>
+                                <option value="6+2">6 + 2</option>
+                                <option value="6+2">6 + 2</option>
+                                <option value="7+1">7 + 1</option>
+                                <option value="7+2">7 + 2</option>
+                                <option value="7+3">7 + 3</option>
+                                <option value="8+1">8 + 1</option>
+                                <option value="8+2">8 + 2</option>
+                                <option value="8+3">8 + 3</option>
+                                <option value="9+1">9 + 1</option>
+                                <option value="9+2">9 + 2</option>
+                                <option value="9+3">9 + 3</option>
+                                <option value="10+1">10 + 1</option>
+                                <option value="10+2">10 + 2</option>
+                                <option value="10+3">10 + 3</option>
+                                <option value="1+0">1 + 0</option>
+                                <option value="2+0">2 + 0</option>
+                                <option value="3+0">3 + 0</option>
+                                <option value="4+0">4 + 0</option>
+                                <option value="5+0">5 + 0</option>
+                                <option value="6+0">6 + 0</option>
+                                <option value="7+0">7 + 0</option>
+                                <option value="8+0">8 + 0</option>
+                                <option value="9+0">9 + 0</option>
+                                <option value="10+0">10 + 0</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    @*bina yaş*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="yassecim">
+                                <option value="0">Tümü</option>
+                                <option value="100">Sıfır Bina</option>
+                                <option value="1">1-5</option>
+                                <option value="2">6-10</option>
+                                <option value="3">11-15</option>
+                                <option value="4">16-20</option>
+                                <option value="5">21 ve üzeri</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    @*bulunduğu kat*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="katsecim">
+                                <option value="0">Tümü</option>
+                                <option value="-4">Kot 4</option>
+                                <option value="-3">Kot 3</option>
+                                <option value="-2">Kot 2</option>
+                                <option value="-1">Kot 1</option>
+                                <option value="100">Bodrum Katı</option>
+                                <option value="101">Zemin Katı</option>
+                                <option value="102">Bahçe Katı</option>
+                                <option value="103">Giriş Katı</option>
+                                <option value="104">Yüksek Giriş</option>
+                                <option value="105">Müstakil</option>
+                                <option value="106">Villa</option>
+                                <option value="107">Çatı Katı</option>
+                                <option value="108">Asma Katı</option>
+                                <option value="109">En Üst Katı</option>
+                                <option value="110">Teras Katı</option>
+                                <option value="111">Ara Kat</option>
+                                <option value="112">Çatı Dublex</option>
+                                <option value="113">Düz Giriş</option>
+                                <option value="114">Bahçe Dublex</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    @*total kat*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="totalkatsecim">
+                                <option value="0">Tümü</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    @*ısınma*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="isinmasecim">
+                                <option value="0">Tümü</option>
+                                <option value="1">Doğalgaz Sobalı</option>
+                                <option value="2">Isıtma Yok</option>
+                                <option value="3">Klima</option>
+                                <option value="4">Kombi Doğalgaz</option>
+                                <option value="5">Merkezi (Pay Ölçer)</option>
+                                <option value="6">Merkezi Doğalgaz</option>
+                                <option value="7">Merkezi Kömür</option>
+                                <option value="8">Sobalı</option>
+                                <option value="9">Yerden Isıtma</option>
+                                <option value="10">Kat Kaloriferi</option>
+                                <option value="11">Güneş Enerjisi</option>
+                                <option value="12">Jeotermal</option>
+                                <option value="13">VRV</option>
+                                <option value="14">Isı Pompası</option>
+                                <option value="15">Kombi (Elektrikli)</option>
+                                <option value="16">Kalorifer (Akaryakıt)</option>
+                                <option value="17">Kalorifer (Kömür)</option>
+                                <option value="18">Kalorifer (Doğalgaz)</option>
+                                <option value="19">Fan-Coil</option>
+                                <option value="20">Şömine</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    @*banyo*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="banyosecim">
+                                <option value="0">Tümü</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    @*eşya*@
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <select class="form-control" id="esyasecim">
+                                <option value="0">Tümü</option>
+                                <option value="1">Eşyalı</option>
+                                <option value="2">Eşyalı Değil</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="margin-bottom: 10px;">
+                        <button type="button" id="evara" onclick="evarama();" class="btn btn-primary" style="background-color: #e70000;border-radius: 10px;">
+                            <i class="icofont icofont-job-search m-r-5"></i> Ev Ara
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-1 col-xl-1"></div>
+
+    <div class="col-lg-4 col-xl-4">
+        <div class="card">
+            <div class="card-header" style="background-color: #00c14d;text-align: center;margin-top: 15px;border-radius: 10px;">
+                <h5 style="font-size: 22px;font-family: math;font-weight: bold;padding: 10px;">Hepsi Emlak</h5>
+            </div>
+            <div class="card-block" id="evListe">
+                    <div class="job-cards">
+                        <div class="media" style="border-radius: 10px;background-color: white;">
+                            <a class="media-left media-middle" href="@Homes.link" target="_blank">
+                                <img class="media-object m-r-10 m-l-10" src="@Homes.image" alt="@Homes.city" style="width: 180px;height: 150px;margin-left: 25px;">
+                            </a>
+                            <div class="media-body">
+                                <p class="text-muted">
+                                    <span style="font-weight:600;">İl : <span style="font-weight:100;"> @Homes.city</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">İlçe : <span style="font-weight:100;"> @Homes.county</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Mahalle : <span style="font-weight:100;"> @Homes.district</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Fiyat : <span style="font-weight:100;"> @Homes.price</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Oda Sayısı : <span style="font-weight:100;"> @Homes.room</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Bina Yaşı : <span style="font-weight:100;"> @Homes.age</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Bulunduğu Kat :  <span style="font-weight:100;">@Homes.floor</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Bina MetreKare : <span style="font-weight:100;"> @Homes.metre</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Bina Toplam Kat Sayısı : <span style="font-weight:100;"> @Homes.totalFloor</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Isıtma Tipi : <span style="font-weight:100;"> @Homes.heating</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Eşyalı Durumu : <span style="font-weight:100;"> @Homes.isFurnished</span></span>
+                                    <br />
+                                    <span style="font-weight:600;">Banyo Sayısı : <span style="font-weight:100;"> @Homes.bathroom</span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br />
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-4 col-xl-4">
+        <div class="card">
+            <div class="card-header" style="background-color: #00c14d;text-align: center;margin-top: 15px;border-radius: 10px;">
+                <h5 style="font-size: 22px;font-family: math;font-weight: bold;padding: 10px;">Emlak Jet</h5>
+            </div>
+            <div class="card-block" id="evListe">
+                <div class="job-cards">
+                    <div class="media" style="border-radius: 10px;background-color: white;">
+                        <a class="media-left media-middle" href="@HomesSahibinden.link" target="_blank">
+                            <img class="media-object m-r-10 m-l-10" src="@HomesSahibinden.image" alt="@HomesSahibinden.city" style="width: 180px;height: 150px;margin-left: 25px;">
+                        </a>
+                        <div class="media-body">
+                            <p class="text-muted">
+                                <span style="font-weight:600;">İl : <span style="font-weight:100;"> @HomesSahibinden.city</span></span>
+                                <br />
+                                <span style="font-weight:600;">İlçe : <span style="font-weight:100;"> @HomesSahibinden.county</span></span>
+                                <br />
+                                <span style="font-weight:600;">Mahalle : <span style="font-weight:100;"> @HomesSahibinden.district</span></span>
+                                <br />
+                                <span style="font-weight:600;">Fiyat : <span style="font-weight:100;"> @HomesSahibinden.price</span></span>
+                                <br />
+                                <span style="font-weight:600;">Oda Sayısı : <span style="font-weight:100;"> @HomesSahibinden.room</span></span>
+                                <br />
+                                <span style="font-weight:600;">Bina Yaşı : <span style="font-weight:100;"> @HomesSahibinden.age</span></span>
+                                <br />
+                                <span style="font-weight:600;">Bulunduğu Kat :  <span style="font-weight:100;">@HomesSahibinden.floor</span></span>
+                                <br />
+                                <span style="font-weight:600;">Bina MetreKare : <span style="font-weight:100;"> @HomesSahibinden.metre</span></span>
+                                <br />
+                                <span style="font-weight:600;">Bina Toplam Kat Sayısı : <span style="font-weight:100;"> @HomesSahibinden.totalFloor</span></span>
+                                <br />
+                                <span style="font-weight:600;">Isıtma Tipi : <span style="font-weight:100;"> @HomesSahibinden.heating</span></span>
+                                <br />
+                                <span style="font-weight:600;">Eşyalı Durumu : <span style="font-weight:100;"> @HomesSahibinden.isFurnished</span></span>
+                                <br />
+                                <span style="font-weight:600;">Banyo Sayısı : <span style="font-weight:100;"> @HomesSahibinden.bathroom</span></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

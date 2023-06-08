@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="945cfd1701f64547abf845135b38555e" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="WebScrapingDBModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WebScrapingDBModel.Homes" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WebScrapingDBModel.HomesSahibinden" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WebScrapingDBModel.il" Width="1.5" PointX="0.875" PointY="5" />
+        <EntityTypeShape EntityType="WebScrapingDBModel.ilce" Width="1.5" PointX="2.75" PointY="5" />
+        <EntityTypeShape EntityType="WebScrapingDBModel.mahalle" Width="1.5" PointX="4.75" PointY="5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
